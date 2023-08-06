@@ -1,0 +1,161 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 98%;
+}
+
+.img-pic{
+    border: 1px solid white;
+    width: 4.8vw;
+    border-radius: 10%;
+
+}
+.font_AwesomeLinks {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.link-1 a{
+    padding: 0px 40px;
+    /* margin-left:   50px; */
+}
+
+.grid_box {
+    margin-top: 30px;
+}
+
+.firstCol {
+    margin-left: 10px;
+    display: flex;   
+}
+
+.box-1 img{ 
+    box-shadow: -2px -2px dodgerblue, -2px -2px dodgerblue,  2px 2px dodgerblue, 2px 2px dodgerblue;
+    border-radius: 25%;
+}
+
+.li-1  {
+    margin-left: 20px;
+}
+
+.li-1 span  {   
+    padding-left: 5px;
+}
+
+.name {
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a .name{    
+    text-decoration: none;
+}
+
+.name:hover{
+    color: rgb(38, 93, 156);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.media:hover {
+color: rgb(38, 93, 156);
+}
+
+.social_media {
+    cursor: pointer;
+}
+
+.marginTop{
+    padding-left: 50px;
+    margin-top: 10px;
+}
+
+.marginTop-1{
+    border: 1px solid black;
+    box-shadow: 3px 3px 10px #e2e2e2, -2px -0px 10px #e2e2e2;
+    margin-top: 10px;
+}
+
+.marginTop:hover{
+    color: rgb(38, 93, 156);
+}
+
+.onlyBoxShadow {
+    box-shadow: 3px 3px 10px #e2e2e2, -2px -0px 10px #e2e2e2;
+    
+}
+
+.onlyBoxShadow  {
+    width: 50% ;
+    height: 40vh;
+    
+}
+
+.image-post {
+    border-radius: 50%;
+}
+
+#post-input:hover {
+background-color: rgb(197, 197, 197);
+}
+
+.firstmodal:hover{
+background-color:  rgb(197, 197, 197);
+}
+
+.secondmodal:hover{
+background-color:  rgb(197, 197, 197);
+}
+
+.thirdmodal:hover{
+background-color:  rgb(197, 197, 197);
+}
+#profileBtn {
+    cursor: pointer;
+}
+.post img{
+    display: block;
+    margin-top: 25px;
+    margin-left:auto;
+    margin-right:  auto;
+    width: 450px;
+    cursor: pointer;
+
+}
+.post {
+  
+background-color: black;
+}
+.user-name a {
+    text-decoration: none;
+}
+.time a {
+    text-decoration: none;
+}
+.description {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+
+}
+.edit {
+    padding-left:95px; 
+}
+.like-box{
+    cursor: pointer;
+}
+.comment-box{
+    cursor: pointer;
+}
+.share-box{
+    cursor: pointer;
+}
+
+/* .User_name {
+    text-decoration: none;
+    color: black;
+} */

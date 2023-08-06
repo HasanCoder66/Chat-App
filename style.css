@@ -1,0 +1,128 @@
+  /* This is the universal selctor  */
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* this is the body of my page */
+
+body {
+    background-color: black;
+    height: 100vh;
+}
+
+
+/* this the main container all items in this container */
+
+.container {
+    height: 100%;
+    align-items: center;
+}
+
+.fb-col p{ 
+font-size: 1.3rem;
+font-weight: 600;
+color: white;
+}
+
+.data-entry-col {
+    /* width: 35vw; */
+    box-shadow: 3px 3px 10px #e2e2e2, -2px -0px 10px #e2e2e2;
+    padding: 30px 10px 40px 10px;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+.forget-pass {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.d-o-b {
+    font-size: 12px;
+ }
+
+.firstnameAndlastname {
+    display: grid ;
+    grid-template-columns: 1fr 1fr;
+    gap:10px
+}
+
+.modal-header {
+    padding: 0px 20px;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+
+.modal-body p {
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+
+.btn-secondary {
+    color: black;
+background-color: white;
+}
+
+.btn-secondary:hover {
+    color: black;
+background-color: white;
+}
+
+.btn-secondary:focus{
+background-color: white;
+color: black;
+}
+
+.dropdown-toggle::after {
+    margin-left: 5em;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+} 
+
+
+
+
+
+
+
+
+/* media Querries  */
+
+/* Media querry */
+
+@media screen and (max-width:992) {
+    
+    .fb-col p {
+        font-size: 0.8rem;
+    }    
+
+    .data-entry-col {
+    width: 60vw;
+}
+
+}
+
+@media screen and (max-width:768) {
+
+.container {
+    display: none;
+}
+    .fb-col p {
+        font-size: 0.6rem;
+    }    
+
+    .data-entry-col {
+    width: 60vw;
+}
+
+}

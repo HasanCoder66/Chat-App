@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link rel="stylesheet" href="daschboard.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="profile.css">
+</head>
+
+<body>
+
+  <div class="main-container container-fluid">
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <!-- <img src="" alt="" width="40px"> -->
+          <img
+            src="data:image/png;base64,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"
+            alt="logo" width="35px">
+        </a>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-primary" type="submit">Search</button>
+        </form>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 ps-5">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="../dashboard/dashboard.html">
+                <img src="../assets/assets/home black.webp" alt="" width="25px">
+                <strong>Home</strong></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <img src="../assets/assets/vedio black vector" alt="" width="25px">
+                <strong>Vedio</strong>
+              </a>
+            </li>
+
+
+            <li class="nav-item">
+              <a class="nav-link" href="../job/job.html">
+                <img
+                  src="data:image/png;base64,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"
+                  alt="" width="25px">
+                <strong>Jobs</strong>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <img src="../assets/assets/marketplace black vector.png" alt="" width="25px">
+                <strong>Marketplace</strong>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <img src="../assets/assets/blac groups.png" alt="" width="25px">
+                <strong>Groups</strong>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <img src="../assets/assets/gaming black vector.png" alt="" width="25px">
+                <strong>Gaming</strong>
+              </a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+
+     
+    </nav>
+
+
+    <div class="background" style="background-color: rgb(77, 75, 75); background-position: center;">
+      <img
+        src="https://media.istockphoto.com/id/1470544119/photo/female-it-specialist.webp?b=1&s=170667a&w=0&k=20&c=MvSCdVSFjNbsOEp3t69cZjwTiFV5-5uIj3J0Gl3zjH8="
+        alt="BackGround Photo">
+
+    </div>
+
+    <div class="container ">
+      <nav class="navbar navbar-expand-lg bg-light ms-auto ">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Posts</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="#">About</a>
+              <a class="nav-link" href="#">Friends</a>
+              <a class="nav-link" href="#">Photos</a>
+              <a class="nav-link ">Vedios</a>
+              <a class="nav-link ">Reels</a>
+              <!-- Large button groups (default and split) -->
+
+              <div class="dropdown-center">
+                <button class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  More
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item " href="#">Music</a></li>
+                  <li><a class="dropdown-item " href="#">Sports</a></li>
+                  <li><a class="dropdown-item " href="#">Music</a></li>
+                  <li><a class="dropdown-item " href="#">Movies</a></li>
+                  <li><a class="dropdown-item " href="#">TV Shows</a></li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+
+    <div class="container text-center mt-5">
+
+      <div class="row">
+
+        <!--                1                   -->
+
+         <!-- alt="User Pic" -->
+                <!-- ye alternate hai 🏴 -->
+        <div class="col-sm-5 mb-3 mb-sm-0 mt-4" id="userDataBox">
+          <div class="card">
+            <div class="card-body">
+              <p id="profileBtn">
+                <img
+                  src="../assets/assets/avatar.png "
+                  width="50px" class="rounded-circle ">
+               
+                
+                <strong class="User_name">Muhammad Hasan Ashraf </strong>
+              </p>
+              <p>
+                <strong class="User_email">User Email Address </strong>
+              </p>
+              <p>
+                <strong class="User_contact">User Contact No </strong>
+              </p>
+              <p>
+                <strong class="User_description">User Description </strong>
+              </p>
+
+
+              <a href="#" class="btn btn-primary">View full profile</a>
+            </div>
+          </div> 
+        </div>
+
+
+        <!--                    2   Center Box                 -->
+
+
+        <div class="col-sm-6 mb-3 mb-sm-0  mt-4">
+          <div class="card">
+            <div class="card-body ">
+
+              <!-- yahan pai meny oper stories vedios and rooms ka box banaya hai  ⇓⇓⇏⇏⇓⇓   -->
+              <div class="card-title d-flex justify-content-around  mt-2">
+                <div class="box" style="color:  rgb(66, 64, 64);;">
+                  <i class="fa-solid fa-business-time"></i>
+                  <strong>Stories</strong>
+                </div>
+                <div class="box" style="color:  rgb(66, 64, 64);;">
+                  <i class="fa-brands fa-tiktok"></i>
+                  <strong> Vedios</strong>
+                </div>
+                <div class="box" style="color: rgb(66, 64, 64); ;">
+                  <i class="fa-solid fa-video"></i>
+                  <strong> Rooms</strong>
+                </div>
+              </div>
+
+
+
+            </div>
+          </div>
+          <div class="Centerinput shadow mt-3 p-3 mb-5 bg-body rounded ">
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1"><img
+                  src="https://scontent.fkhi4-3.fna.fbcdn.net/v/t39.30808-6/344859260_9764027536941505_5188833060278820647_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeH7vxBxRC8BIXXDfKxmKp_QIQqlHeM23VkhCqUd4zbdWUQP10T73idj9leNJ4HhuNE3NEJ2L2biQphwS3SpwqfO&_nc_ohc=Ev9NJMTiCH8AX9tS5LP&_nc_oc=AQm3HNrP-TdlBksGX79ATJtssRpdwujV4v09mFkqiz8fflH_efOIfbCadtWmLeq6I70&_nc_zt=23&_nc_ht=scontent.fkhi4-3.fna&oh=00_AfBVdO1b8Yk6YnFz6w6L08gRX270M3_UhUPeWLMuTQEWvg&oe=648F185F"
+                  alt="" width="50px" class="rounded-circle"></span>
+              <input type="text" class="form-control" placeholder="What'on your mind, Muhammad Hasan?"
+                aria-label="Username" aria-describedby="basic-addon1" id="post-input">
+            </div>
+            <div class="modalsOpeners d-flex justify-content-around">
+              <div class="firstmodal">
+
+
+                <!-- Button trigger modal -->
+                <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  <img
+                    src="https://static.xx.fbcdn.net/rsrc.php/v3/yr/r/c0dWho49-X3.png?_nc_eui2=AeHc-BMxS5wT3vDXDAbT3_fkVnUPE18ZZ-dWdQ8TXxln52UIYBNHbvzynaBMvFW737yMP4M_ROmDbGDG9OX1Zfhd"
+                    alt="" width="25px">
+                  Live Vedio
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Leave Page?</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        You have unsaved changes that will be lost if you leave the page.
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Leave</button>
+                        <button type="button" class="btn btn-primary">Keep Editing</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="secondmodal">
+
+                <!-- Button trigger modal -->
+                <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                  <img
+                    src="https://static.xx.fbcdn.net/rsrc.php/v3/y7/r/Ivw7nhRtXyo.png?_nc_eui2=AeFxQLMkiUbUThG2rcdAwA9cPL4YoeGsw5I8vhih4azDkpOVIWxNiMyE_cJk7Swm4FCF4UZCvL7qSuTc7wn6WJ78"
+                    alt="">
+                  Photo/Vedio
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                  tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Create Post</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="content">
+                          <div class="imgbox">
+                            <img
+                              src="https://scontent.fkhi4-3.fna.fbcdn.net/v/t39.30808-6/344859260_9764027536941505_5188833060278820647_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeH7vxBxRC8BIXXDfKxmKp_QIQqlHeM23VkhCqUd4zbdWUQP10T73idj9leNJ4HhuNE3NEJ2L2biQphwS3SpwqfO&_nc_ohc=Ev9NJMTiCH8AX9tS5LP&_nc_oc=AQm3HNrP-TdlBksGX79ATJtssRpdwujV4v09mFkqiz8fflH_efOIfbCadtWmLeq6I70&_nc_zt=23&_nc_ht=scontent.fkhi4-3.fna&oh=00_AfBVdO1b8Yk6YnFz6w6L08gRX270M3_UhUPeWLMuTQEWvg&oe=648F185F"
+                              alt="" width="50px" class="rounded-circle">
+
+                            <span>
+                              <strong class="User_name">Muhammad Hasan</strong></span>
+                            <br>
+                            <strong>Public <i class="fa-solid fa-caret-down"></i></strong>
+
+                          </div>
+                          <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="What's on your mind, Muhammad Hasan? "
+                              aria-label="Username" aria-describedby="basic-addon1" id="input-text">
+                            <span class="input-group-text" id="basic-addon1">
+                              <img src="./assets/feelact.png" alt="">
+                            </span>
+                          </div>
+                          <!-- <button type="button" class="btn btn-primary" id="postAddImage">Add
+                                                Image</button> -->
+                          <input type="file">
+
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                      <div class="d-grid gap-2">
+                        <button class="btn btn-primary postBtn" type="button">Post</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="thirdmodal">
+                <div class="modal fade" id="exampleModalToggle" aria-hidden="true"
+                  aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Modal 1</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        Show a second modal and hide this one with the button below.
+                      </div>
+                      <div class="modal-footer">
+                        <button class="btn btn-primary" data-bs-target="#exampleModalToggle2"
+                          data-bs-toggle="modal">Open second modal</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal fade" id="exampleModalToggle2" aria-hidden="true"
+                  aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Modal 2</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        Hide this modal and show the first with the button below.
+                      </div>
+                      <div class="modal-footer">
+                        <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back
+                          to first</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <img
+                  src="https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Y4mYLVOhTwq.png?_nc_eui2=AeHirYnT0VvPsJIAgKf2lMn1vPIN-OmHLJy88g346YcsnIHNYvt7yBNV-YIBftg6dM4xy4v2MQEG9fohnrRAp5d8"
+                  alt="">
+                <button class="btn " data-bs-target="#exampleModalToggle"
+                  data-bs-toggle="modal">Feelings/Acticity</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- main container End -->
+  </div>
+  <script type="module" src="profile.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

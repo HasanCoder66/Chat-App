@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DashBoard</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="main_container">
+        <nav class="navbar navbar-expand-lg bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="https://web.facebook.com/?_rdc=1&_rdr"><img
+                        src="data:image/png;base64,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"
+                        alt="logo" width="35px"></a>
+                <form class="d-flex" role="search">
+                    <input class="form-control  me-2 " type="search" placeholder="Search Facebook" aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="second_box">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent second_box">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            </li>
+                            <li class="nav-item dropdown img-pic">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <img src="" alt="" width="35px" class="">
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="../profile/profile.html">My Profile</a></li>
+                                    <li><a class="dropdown-item" href="../job/job.html">Job</a></li>
+                                    <li><a class="dropdown-item" href="#">Edit Profile</a></li>
+                                    <li><a class="dropdown-item" href="#">Delete</a></li>
+                                    <li> <hr class="dropdown-divider"></li>
+                                    
+                                    <li><a class="dropdown-item" href="#" id="logoutBtn">Log Out</a></li>
+                                </ul>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="fa-solid fa-comment"></i></a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link"><i class="fa-solid fa-bell-concierge"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#"><i
+                                        class="fa-solid fa-pars"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#"><i
+                                        class="fa-solid fa-bars"></i></a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+        </nav>
+
+
+
+
+
+
+        <!-- main dash -->
+        <!-- cards -->
+
+
+        <div class="row">
+            <!--                1                   -->
+            <div class="col-sm-3 mb-3 mb-sm-0">
+                <div class="card">
+                    <div class="card-body">
+                        <p id="profileBtn">
+                            <img src="https://scontent.fkhi4-3.fna.fbcdn.net/v/t39.30808-6/344859260_9764027536941505_5188833060278820647_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeH7vxBxRC8BIXXDfKxmKp_QIQqlHeM23VkhCqUd4zbdWUQP10T73idj9leNJ4HhuNE3NEJ2L2biQphwS3SpwqfO&_nc_ohc=Ev9NJMTiCH8AX9tS5LP&_nc_oc=AQm3HNrP-TdlBksGX79ATJtssRpdwujV4v09mFkqiz8fflH_efOIfbCadtWmLeq6I70&_nc_zt=23&_nc_ht=scontent.fkhi4-3.fna&oh=00_AfBVdO1b8Yk6YnFz6w6L08gRX270M3_UhUPeWLMuTQEWvg&oe=648F185F"
+                            alt="Avatar Pic" width="50px" class="rounded-circle ">
+                            <a href="../profile/profile.html">
+                            <strong class="User_name">Muhammad Hasan Ashraf </strong>
+                        </a>
+                        </p>
+                        <p>
+                            <img src="../assets/assets/friends Avatar.jpg" alt="Avatar Pic" width="50px">
+                            <strong>Friends </strong>
+                        </p>
+                        <p>
+                            <img src="../assets/assets/recent.png" alt="Avatar Pic" width="50px">
+                            <strong>Feeds (Most Recents) </strong>
+                        </p>
+                        <p>
+                            <img src="../assets/assets//group.jpg" alt="Avatar Pic" width="50px">
+                            <strong>Groups </strong>
+                        </p>
+                        <p>
+                            <img src="../assets/assets/marketplace.jpg" alt="Avatar Pic" width="50px">
+                            <strong>Marketplace </strong>
+                        </p>
+                        <p>
+                            <img src="../assets/assets/vedio.jfif" alt="Avatar Pic" width="50px">
+                            <strong>Watch </strong>
+                        </p>
+                        <p>
+                            <img src="../assets/assets/meomries.jfif" alt="Avatar Pic" width="50px">
+                            <strong>Memories </strong>
+                        </p>
+                        <p>
+                            <img src="../assets/assets/saved.webp" alt="Avatar Pic" width="50px">
+                            <strong>Saved</strong>
+                        </p>
+                        <p>
+                            <img src="../assets/assets/pages.jpg" alt="Avatar Pic" width="50px">
+                            <strong>Pages </strong>
+                        </p>
+                        <div class="shortcuts ">
+                            <hr>
+                            <p style="color: rgb(109, 108, 108);">
+                                Your Shortcuts Games
+                                <span class="edit ">Edit</span>
+                            </p>
+                            <p>
+                                <img src="../assets/assets/candy.jfif" alt="Avatar Pic" width="50px">
+                                <strong>Candy Crush Saga</strong>
+                            </p>
+                            <p>
+                                <img src="../assets/assets/8pool.jfif" alt="Avatar Pic" width="50px">
+                                <strong>8 Ball Pool</strong>
+                            </p>
+                            <p>
+                                <img src="../assets/assets/gta.webp" alt="Avatar Pic" width="50px">
+                                <strong>Grand Thieft Auto 5
+                                </strong>
+                            </p>
+                            <p>
+                                <img src="../assets/assets/cs 1.6.jfif" alt="Avatar Pic" width="50px">
+                                <strong>Counter Strike</strong>
+                            </p>
+                            <p>
+                                <img src="../assets/assets/subway.webp" alt="Avatar Pic" width="50px" class="rounded-circle">
+                                <strong>Subway Surfers</strong>
+                            </p>
+                            <p>
+                                <img src="../assets/assets/word link.jpg" alt="Avatar Pic" width="50px" class="rounded-square">
+                                <strong>Word link</strong>
+                            </p>
+
+                        </div>
+                        <a href="#" class="btn btn-primary">Do Something</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--                    2   Center Box                 -->
+            <div class="col-sm-6 mb-3 mb-sm-0 mt-4">
+                <div class="card">
+                    <div class="card-body ">
+
+                        <!-- yahan pai meny oper stories vedios and rooms ka box banaya hai  ⇓⇓⇏⇏⇓⇓                -->
+                        <div class="card-title d-flex justify-content-around mb-5">
+                            <div class="box" style="color:  rgb(66, 64, 64);;">
+                                <i class="fa-solid fa-business-time"></i>
+                                <strong>Stories</strong>
+                            </div>
+                            <div class="box" style="color:  rgb(66, 64, 64);;">
+                                <i class="fa-brands fa-tiktok"></i>
+                                <strong> Vedios</strong>
+                            </div>
+                            <div class="box" style="color: rgb(66, 64, 64); ;">
+                                <i class="fa-solid fa-video"></i>
+                                <strong> Rooms</strong>
+                            </div>
+                        </div>
+
+                        <!-- Yaha pai cards agaye -->
+                        <!-- first story -->
+                        <div class="cardsboxmanual d-flex">
+                            <div class="card " style="width: 8rem; height: 10rem;">
+                                <img src="https://scontent.fkhi17-1.fna.fbcdn.net/v/t39.30808-1/344859260_9764027536941505_5188833060278820647_n.jpg?stp=dst-jpg_p160x160&_nc_cat=108&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=lUirVVdDOKEAX9uEWlu&_nc_ht=scontent.fkhi17-1.fna&oh=00_AfD_Nsh-RTl7qmKGjZxMNonIc12gmyGP7TZ6r7cJR2s2CQ&oe=64BD289D"
+                                    class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title fs-6 mb-10">M.Hasan</h5>
+                                </div>
+                            </div>
+
+                            <!-- Second story -->
+                            <div class="card " style="width: 8rem; height: 10rem;">
+                                <img src="https://avatars.githubusercontent.com/u/66431140?v=4" class="card-img-top"
+                                    alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title fs-6 mb-10">Inno Sufiyan</h5>
+                                </div>
+                            </div>
+
+
+                            <!-- Third story -->
+                            <div class="card " style="width: 8rem; height: 10rem;">
+                                <img src="https://scontent.fkhi17-1.fna.fbcdn.net/v/t39.30808-6/294315921_4070610759831521_7004232533040849276_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=174925&_nc_eui2=AeGtxO6lqf6nW-v1vcSGwVOGdccw383i1251xzDfzeLXbguJEupApfRqSXju2aMJNE-zpmLOgJ2piMLGBpPGJSaz&_nc_ohc=ixzhd4L-seEAX_DXSCw&_nc_ht=scontent.fkhi17-1.fna&oh=00_AfC6kTfwCrG54GyHzvH4zGz-Eq-eDXW8BeJPXzS_g3RhUQ&oe=64BE7E10"
+                                    class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title fs-6 mb-10"> Mukhtar</h5>
+                                </div>
+                            </div>
+
+
+                            <!-- Fourth story -->
+                            <div class="card " style="width: 8rem; height: 10rem;">
+                                <img src="https://avatars.githubusercontent.com/u/121276577?v=4" class="card-img-top"
+                                    alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title fs-6 mb-10">Hammad</h5>
+                                </div>
+                            </div>
+
+                            <!-- Fifth story -->
+                            <div class="card " style="width: 8rem; height: 10rem;">
+                                <img src="https://avatars.githubusercontent.com/u/121274660?v=4" class="card-img-top"
+                                    alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title fs-6 mb-10">Rizwan</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Centerinput shadow mt-3 p-3 mb-5 bg-body rounded ">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1"><img
+                                src="https://scontent.fkhi4-3.fna.fbcdn.net/v/t39.30808-6/344859260_9764027536941505_5188833060278820647_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeH7vxBxRC8BIXXDfKxmKp_QIQqlHeM23VkhCqUd4zbdWUQP10T73idj9leNJ4HhuNE3NEJ2L2biQphwS3SpwqfO&_nc_ohc=Ev9NJMTiCH8AX9tS5LP&_nc_oc=AQm3HNrP-TdlBksGX79ATJtssRpdwujV4v09mFkqiz8fflH_efOIfbCadtWmLeq6I70&_nc_zt=23&_nc_ht=scontent.fkhi4-3.fna&oh=00_AfBVdO1b8Yk6YnFz6w6L08gRX270M3_UhUPeWLMuTQEWvg&oe=648F185F"
+                                alt="" width="50px" class="rounded-circle"></span>
+                        <input type="text" class="form-control" placeholder="What'on your mind, Muhammad Hasan?"
+                            aria-label="Username" aria-describedby="basic-addon1" id="post-input">
+                    </div>
+                    <div class="modalsOpeners d-flex justify-content-around">
+                        <div class="firstmodal">
+
+
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <img src="https://static.xx.fbcdn.net/rsrc.php/v3/yr/r/c0dWho49-X3.png?_nc_eui2=AeHc-BMxS5wT3vDXDAbT3_fkVnUPE18ZZ-dWdQ8TXxln52UIYBNHbvzynaBMvFW737yMP4M_ROmDbGDG9OX1Zfhd" alt="" width="25px">
+                                Live Vedio
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Leave Page?</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            You have unsaved changes that will be lost if you leave the page.
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Leave</button>
+                                            <button type="button" class="btn btn-primary">Keep Editing</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="secondmodal">
+
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                <img src="https://static.xx.fbcdn.net/rsrc.php/v3/y7/r/Ivw7nhRtXyo.png?_nc_eui2=AeFxQLMkiUbUThG2rcdAwA9cPL4YoeGsw5I8vhih4azDkpOVIWxNiMyE_cJk7Swm4FCF4UZCvL7qSuTc7wn6WJ78" alt="">
+                                Photo/Vedio
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
+                                data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Create Post</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="content">
+                                                <div class="imgbox">
+                                                    <img src="https://scontent.fkhi4-3.fna.fbcdn.net/v/t39.30808-6/344859260_9764027536941505_5188833060278820647_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeH7vxBxRC8BIXXDfKxmKp_QIQqlHeM23VkhCqUd4zbdWUQP10T73idj9leNJ4HhuNE3NEJ2L2biQphwS3SpwqfO&_nc_ohc=Ev9NJMTiCH8AX9tS5LP&_nc_oc=AQm3HNrP-TdlBksGX79ATJtssRpdwujV4v09mFkqiz8fflH_efOIfbCadtWmLeq6I70&_nc_zt=23&_nc_ht=scontent.fkhi4-3.fna&oh=00_AfBVdO1b8Yk6YnFz6w6L08gRX270M3_UhUPeWLMuTQEWvg&oe=648F185F"
+                                                        alt="" width="50px" class="rounded-circle">
+
+                                                    <span>
+                                                        <strong class="User_name">Muhammad Hasan</strong></span>
+                                                    <br>
+                                                    <strong>Public <i class="fa-solid fa-caret-down"></i></strong>
+
+                                                </div>
+                                                <div class="input-group mb-3">
+                                                    <input type="text" class="form-control"
+                                                        placeholder="What's on your mind, Muhammad Hasan? "
+                                                        aria-label="Username" aria-describedby="basic-addon1"
+                                                        id="input-text">
+                                                    <span class="input-group-text" id="basic-addon1">
+                                                        <img src="../assets/assets/feelact.png" alt="">
+                                                    </span>
+                                                </div>
+                                                <!-- <button type="button" class="btn btn-primary" id="postAddImage">Add
+                                                    Image</button> -->
+                                                <input type="file" id="postAddImage">
+
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Close</button>
+                                        </div>
+                                        <div class="d-grid gap-2">
+                                            <button class="btn btn-primary postBtn" type="button">Post</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="thirdmodal">
+                            <div class="modal fade" id="exampleModalToggle" aria-hidden="true"
+                                aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Modal 1</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Show a second modal and hide this one with the button below.
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button class="btn btn-primary" data-bs-target="#exampleModalToggle2"
+                                                data-bs-toggle="modal">Open second modal</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal fade" id="exampleModalToggle2" aria-hidden="true"
+                                aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Modal 2</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Hide this modal and show the first with the button below.
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button class="btn btn-primary" data-bs-target="#exampleModalToggle"
+                                                data-bs-toggle="modal">Back to first</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <img src="https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Y4mYLVOhTwq.png?_nc_eui2=AeHirYnT0VvPsJIAgKf2lMn1vPIN-OmHLJy88g346YcsnIHNYvt7yBNV-YIBftg6dM4xy4v2MQEG9fohnrRAp5d8" alt="">
+                            <button class="btn " data-bs-target="#exampleModalToggle"
+                                data-bs-toggle="modal">Feelings/Acticity</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- ye mid section ka post area hai -->
+                <div class="past-Area" id="postArea">
+                    <!-- <div class="container shadow mt-3 p-3 mb-5 bg-body rounded"> 
+                        <div class="row">
+                            <div class="col">
+                                <div class="full-box">
+                                    <h6 class="account-title-name  ">
+                                        <img src="https://scontent.fkhi4-3.fna.fbcdn.net/v/t39.30808-6/344859260_9764027536941505_5188833060278820647_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeH7vxBxRC8BIXXDfKxmKp_QIQqlHeM23VkhCqUd4zbdWUQP10T73idj9leNJ4HhuNE3NEJ2L2biQphwS3SpwqfO&_nc_ohc=Ev9NJMTiCH8AX9tS5LP&_nc_oc=AQm3HNrP-TdlBksGX79ATJtssRpdwujV4v09mFkqiz8fflH_efOIfbCadtWmLeq6I70&_nc_zt=23&_nc_ht=scontent.fkhi4-3.fna&oh=00_AfBVdO1b8Yk6YnFz6w6L08gRX270M3_UhUPeWLMuTQEWvg&oe=648F185F"
+                                            alt="" width="35px" class="rounded-circle">
+                                        <span class="user-name ps-2 "> <a href="../profile/profile.html"
+                                                class="text-dark User_name">Muhammad Hasan Ashraf</a> </span> <br>
+                                    </h6>
+                                    <span class="time ps-5 fs-6 mb-0"><a href="" class="text-dark">5h</a> <i
+                                            class="fa-solid fa-globe"></i></span>
+                                    <div class="description ps-2">
+                                        Hey ! Welcome to my Facebook App. “I don’t know where I’m going, but I’m on my
+                                        way.”
+                                    </div>
+                                    <div class="post">
+                                        <img src="../assets/assets/edit underwater.jpg " alt="" class="" width="450px" style="margin: auto auto; background-position: center;"> 
+                                    </div>
+                                    <div class="like-share d-flex justify-content-around align-items-center">
+                                        <div class="lik-box ">
+                                            <img src="../assets/assets/Edit like thumbsup.jpg" alt="" width="30px">
+                                            <span class="like-text"> <strong>Like</strong></span>
+                                        </div>
+                                        <div class="comment-box ">
+                                            <img src="../assets/assets/comment.png" alt="" width="40px">
+                                            <span> <strong>Comment</strong></span>
+                                        </div>
+                                        <div class="share-box">
+                                            <img src="../assets/assets/Share edit.jpg" alt="" width="55px">
+                                            <span> <strong>Share</strong></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>  -->
+                </div>
+
+
+
+            </div>
+
+
+
+
+
+
+
+            <!--                      3                -->
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Birthdays</h5>
+                        <div class="contact">
+                            <hr>
+                            <h5 style="color: rgb(109, 108, 108);">Contacts & Friends
+                            </h5>
+                        </div>
+                        <p>
+                            <img src="https://avatars.githubusercontent.com/u/66431140?v=4" alt="Avatar Pic"
+                                width="50px" class="rounded-circle">
+                            <strong>Inno Sufiyan</strong>
+                        </p>
+                        <p>
+                            <img src="https://scontent.fkhi17-1.fna.fbcdn.net/v/t39.30808-6/294315921_4070610759831521_7004232533040849276_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=174925&_nc_eui2=AeGtxO6lqf6nW-v1vcSGwVOGdccw383i1251xzDfzeLXbguJEupApfRqSXju2aMJNE-zpmLOgJ2piMLGBpPGJSaz&_nc_ohc=ixzhd4L-seEAX_DXSCw&_nc_ht=scontent.fkhi17-1.fna&oh=00_AfC6kTfwCrG54GyHzvH4zGz-Eq-eDXW8BeJPXzS_g3RhUQ&oe=64BE7E10"
+                                alt="Avatar Pic" width="50px" class="rounded-circle">
+                            <strong>Mukhtar Ahmed Aziz </strong>
+                        </p>
+                        <p>
+                            <img src="https://avatars.githubusercontent.com/u/121276577?v=4" alt="Avatar Pic"
+                                width="50px" class="rounded-circle">
+                            <strong>Hammad shah</strong>
+                        </p>
+
+
+                        <p>
+                            <img src="https://avatars.githubusercontent.com/u/121274660?v=4" alt="Avatar Pic"
+                                width="50px" class="rounded-circle">
+                            <strong>Rizwan Ahmed </strong>
+                        </p>
+
+                        <p>
+
+                            <img src="https://scontent.fkhi4-4.fna.fbcdn.net/v/t1.6435-1/118699158_410899249878959_1420452778581470797_n.jpg?stp=dst-jpg_s200x200&_nc_cat=109&ccb=1-7&_nc_sid=7206a8&_nc_eui2=AeHxzNW33Ig2p6Tm3pZkotf17aWqky_0M8DtpaqTL_QzwK9zzv0eE6VTzlRVBWoBqrgv3uoAnazXhac8-ItRY6I4&_nc_ohc=KPUdNJM0x5oAX86jWZr&_nc_ht=scontent.fkhi4-4.fna&oh=00_AfBGjDtE7TAW_l6-GmMq1pz-NIcb2PBWbSkTcoCWOuI8Aw&oe=64E35E54"
+                                alt="Avatar Pic" width="50px" class="rounded-circle">
+                            <strong>M.Rehan </strong>
+                        </p>
+
+                        <p>
+                            <img src="https://scontent.fkhi4-3.fna.fbcdn.net/v/t1.6435-9/184580011_3945817755506184_6439833681446429000_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeFMPIwlrjHnQZbZtd3owVWCCwohtiHr5xMLCiG2IevnExWLEFpQ3aotCqBw-mOK4qF1XG3elhwcSER_2a-o34k5&_nc_ohc=lZ5G4C7wmRYAX_T5GIz&_nc_oc=AQkcCBXTBD3YtgHCknDSZJNAdQREE8jTQ_mZcY0G9D3MdaMqxFLKZiFpKw69aXQDDTI&_nc_ht=scontent.fkhi4-3.fna&oh=00_AfDJsG35GcBPtBGPraUtFf6bbY_p1RPJZG7MDDg0ohTC0w&oe=64E3729D"
+                                alt="Avatar Pic" width="50px" class="rounded-circle">
+                            <strong>Shary Ibtesaam </strong>
+                        </p>
+                        <p>
+                            <img src="https://pps.whatsapp.net/v/t61.24694-24/361650357_1730772287360349_7006863687605500092_n.jpg?ccb=11-4&oh=01_AdRErImH9JxfOt9wKZhIQj7n1fy7ygx_JA7zVOqfFBIQWw&oe=64C8C0A4"
+                                alt="Avatar Pic" width="50px" class="rounded-circle">
+                            <strong> Muhaimin </strong>
+                        </p>
+
+                        <p>
+                            <img src="https://scontent.fkhi4-3.fna.fbcdn.net/v/t39.30808-6/299992270_1293529477849520_3898109634895646146_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeHE3Fg_SmHQgP2qT1PvRoQYJECP_1PzPIEkQI__U_M8gUNRtGczmevtI3aZW_UNYa0X1XbpLErA3Dzesf5Du0Vu&_nc_ohc=KAkscFUJXFMAX-BD3kk&_nc_zt=23&_nc_ht=scontent.fkhi4-3.fna&oh=00_AfBTLctXAMGh0Fz1loiyh6wVOoqku_ufPBdR6YBFQIlulg&oe=64C06FF8"
+                                alt="Avatar Pic" width="50px" class="rounded-circle">
+                            <strong>Muhammad Ahsan </strong>
+                        </p>
+
+                        <p>
+                            <img src="https://pps.whatsapp.net/v/t61.24694-24/353866326_1920893864945269_743314948954445604_n.jpg?ccb=11-4&oh=01_AdQNkDxGOVdMeAafraV6GQYVbxb0dsbqDAVGiAz40ElD0Q&oe=64C64982"
+                                alt="Avatar Pic" width="50px" class="rounded-circle">
+                            <strong>Zakirullah </strong>
+                        </p>
+                        <p>
+                            <img src="https://pps.whatsapp.net/v/t61.24694-24/337996056_776594460248354_4519503245406696429_n.jpg?ccb=11-4&oh=01_AdRNEI82LIQfs9GuaIbT3fXoJd-v14BYomUQav3QnSm57Q&oe=64C6338C"
+                                alt="Avatar Pic" width="50px" height="60px">
+                            <strong> Abdullah Sajid </strong>
+                        </p>
+
+                        <p>
+                            <img src="../assets/assets/avatar.png" alt="Avatar Pic" width="50px">
+                            <strong>Muhammad Ashhad </strong>
+                        </p>
+
+                        <p>
+                            <img src="https://scontent.fkhi4-2.fna.fbcdn.net/v/t39.30808-6/324021186_1196603324609788_1932491644060278105_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeEhACFhWw7eUX7pESvQsiGzPfsMxu92Uj89-wzG73ZSP4V2J5p0S5zrqIAkwRaYTU_ohV-7g2N9DAfU6nkY70wM&_nc_ohc=6h4d1gA9X58AX-b8K75&_nc_zt=23&_nc_ht=scontent.fkhi4-2.fna&oh=00_AfCeuO6K3kQrls4HX6E_0vOXunnqDIn2WnZJQEftT3WtlQ&oe=64C0821B"
+                                alt="Avatar Pic" width="50px" class="rounded-circle">
+                            <strong>Faizan Akram </strong>
+                        </p>
+
+                        <p>
+                            <img src="../assets/assets/avatar.png" alt="Avatar Pic" width="50px">
+                            <strong>Muhammad Reyyan </strong>
+                        </p>
+                        <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+                        <a href="#" class="btn btn-primary">Back</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+        </div>
+
+    </div>
+    <script type="module" src="dashboard.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js" integrity="sha512-CryKbMe7sjSCDPl18jtJI5DR5jtkUWxPXWaLCst6QjH8wxDexfRJic2WRmRXmstr2Y8SxDDWuBO6CQC6IE4KTA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
